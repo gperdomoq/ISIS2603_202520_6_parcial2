@@ -1,0 +1,14 @@
+<section>
+  <h2>Álbumes</h2>
+
+  @if (album.length === 0) {
+    <p>Selecciona un artista para ver sus álbumes.</p>
+  }
+
+  @for (album of album; track album.id) {
+    <app-album-card
+      [album]="album"
+      (select)="albumSelected.emit($event)">
+    </app-album-card>
+  }
+</section>
